@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 250 15% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Orange corail vibrant */
+    --primary: 16 90% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 16 95% 65%;
+    --primary-dark: 16 85% 48%;
+
+    /* Secondary - Bleu marine profond */
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 222 40% 20%;
+
+    /* Accent - Violet doux */
+    --accent: 270 60% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success - Vert */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Jaune doré */
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --muted: 250 15% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 16 90% 58%;
+
+    --radius: 1rem;
+
+    /* Gradients vibrantes */
+    --gradient-primary: linear-gradient(135deg, hsl(16 90% 58%) 0%, hsl(16 95% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 40% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(270 30% 20%) 50%, hsl(222 47% 11%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(250 15% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(270 60% 65%) 0%, hsl(300 60% 70%) 100%);
+    
+    /* Shadows élégantes */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 12px -2px hsl(222 47% 11% / 0.08);
+    --shadow-lg: 0 12px 24px -4px hsl(222 47% 11% / 0.12);
+    --shadow-xl: 0 24px 48px -12px hsl(222 47% 11% / 0.18);
+    --shadow-primary: 0 8px 24px -4px hsl(16 90% 58% / 0.4);
+    --shadow-card: 0 2px 8px -2px hsl(222 47% 11% / 0.06);
+    
+    /* Spacing system */
+    --section-padding: 1.5rem;
+    --card-padding: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

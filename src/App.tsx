@@ -1,0 +1,62 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Splash from "./pages/Splash";
+import Onboarding from "./pages/Onboarding";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminTontines from "./pages/admin/AdminTontines";
+import AdminStats from "./pages/admin/AdminStats";
+import AdminSettings from "./pages/admin/AdminSettings";
+import Dashboard from "./pages/Dashboard";
+import CreateTontine from "./pages/CreateTontine";
+import TontineDetails from "./pages/TontineDetails";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
+import Transactions from "./pages/Transactions";
+import Notifications from "./pages/Notifications";
+import PaymentMethods from "./pages/PaymentMethods";
+import Security from "./pages/Security";
+import Help from "./pages/Help";
+import NotFound from "./pages/NotFound";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Splash />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create-tontine" element={<CreateTontine />} />
+          <Route path="/tontine/:id" element={<TontineDetails />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/payment-methods" element={<PaymentMethods />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/tontines" element={<AdminTontines />} />
+          <Route path="/admin/stats" element={<AdminStats />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
